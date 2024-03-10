@@ -20,7 +20,13 @@ export const homeNavLinks = [
   {
     name: "Contact-us",
     path: "/contactus",
-  },
+  },{
+    name:"Register",
+    path: "/register"
+  },{
+    name:"Login",
+    path: "/login"
+  }
 ];
 
 export const Technologies = [
