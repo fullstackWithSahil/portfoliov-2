@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Enquiry from "./Enquiry";
 import Feedback from "./Feedback";
+import Link from "next/link";
 
 export default function page() {
   const words = [
@@ -60,9 +61,11 @@ export default function page() {
           {' '}
           or email us at fullstackwithsahil@gmail.com
         </p>
-        <Button>
-          create your cupon code
-        </Button>
+        <Link href={"/cupon"}>
+          <Button>
+            create your cupon code
+          </Button>
+        </Link>
       </div>
       <Enquiry/>
       <Feedback/>

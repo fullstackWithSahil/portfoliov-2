@@ -17,12 +17,11 @@ export async function POST(request:NextRequest){
             const num = Math.floor(Math.random()*10000);
             const otp = num.toString();
             console.log("otp is", otp);
-            await sendMail({
-                text:`otp sent successfully ${otp}`,
-                to:email,
-                subject:"OTP"
-            });
-            console.log(otp)
+            // await sendMail({
+            //     text:`otp sent successfully ${otp}`,
+            //     to:email,
+            //     subject:"OTP"
+            // });
             await kv.set(email,otp);
             return new Response("otp sent successfully")
         }

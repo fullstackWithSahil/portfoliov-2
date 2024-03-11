@@ -17,6 +17,7 @@ type propType ={
   email:string;
   password: string;
 }
+//const { username, middlename, lastname, email, password, otp } = req;
 
 export default function Otp(props:propType) {
   const { toast } = useToast();
@@ -25,30 +26,37 @@ export default function Otp(props:propType) {
   const router = useRouter();
   
   useEffect(() => {
-    async function main(){
-      if (current===4){
+      if (current === 4) {
         const datatosend = {
           ...props,
-          otp:pin
-        }
-        const {data}= await axios.post("/api/register",datatosend);
-        if (data=="invalid otp"){
-          setPin("");
-          setCurrent(0);
-          toast({
-            title: "invalid Otp",
-            description: "make sure you check your email and enter the correct OTP",
-            action: (
-              <ToastAction altText="Goto schedule to undo">okay</ToastAction>
-            ),
+          otp: +pin
+        };
+  
+        axios
+          .post("/api/register", datatosend)
+          .then(response => {
+            if (response.data === "invalid otp") {
+              setPin("");
+              setCurrent(0);
+              toast({
+                title: "invalid Otp",
+                description: "make sure you check your email and enter the correct OTP",
+                action: <ToastAction altText="Goto schedule to undo">okay</ToastAction>
+              });
+            } else {
+              router.push("/login");
+            }
           })
-        }else{
-          router.push("/login");
-        }
+          .catch(error => {
+            setPin("");
+            toast({
+              title: "something went wrong",
+              description: error.message,
+              action: <ToastAction altText="Goto schedule to undo">okay</ToastAction>
+            });
+          });
       }
-    }
-    main();
-  },[current]);
+  }, [current]);
 
   function handleChange(e:ChangeEvent<HTMLInputElement>){
     const valid = "1234567890"

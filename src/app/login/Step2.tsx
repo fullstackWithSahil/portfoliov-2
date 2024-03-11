@@ -25,7 +25,7 @@ export default function Step2({ password,email, onChange}: Step2type) {
             if(data ==="invalid password"){
                 setErr(data)
             }else{
-                router.push("/profile")
+                router.push("/")
             }
         } catch (error) {
             console.log(error);

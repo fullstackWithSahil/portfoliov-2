@@ -1,38 +1,43 @@
 import { connectMongo } from "@/db";
 import User from "@/db/modles/User";
-import { NextRequest } from "next/server";
-import bcrypt from "bcryptjs"
+import bcrypt from "bcryptjs";
 import { kv } from "@vercel/kv";
+import { NextRequest } from "next/server";
 
 export async function POST(request: NextRequest) {
     try {
+        await connectMongo(); // Ensure MongoDB connection is established
+
         const req = await request.json();
-        await connectMongo();
         const { username, middlename, lastname, email, password, otp } = req;
-        
-        //validate the otp and clear the database
+
+        // Validate the OTP and clear the database
         const realOtp = await kv.get(email);
-        if (realOtp!=otp) {
-            return new Response("invalid otp")
+        if (realOtp !== otp) {
+            return new Response("Invalid OTP", { status: 400 });
         }
         await kv.del(email);
-        
-        //encrypting the password
+
+        // Encrypting the password
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
-        
-        //creating user in database
+
+        // Creating user in the database
         const newUser = new User({
             username,
             middlename, // Corrected to match schema
             lastname,
-            password:hashedPassword,
+            password: hashedPassword,
             email,
         });
         await newUser.save();
-        return new Response(JSON.stringify(newUser));
+        
+        // Return the newly created user
+        return new Response(JSON.stringify(newUser), { status: 201 });
         
     } catch (error) {
-        console.log(error);
+        console.error("Error processing POST request:", error);
+        // return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
+        return new Response(JSON.stringify({ error}));
     }
 }
