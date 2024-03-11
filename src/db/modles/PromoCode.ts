@@ -1,11 +1,12 @@
 import mongoose, { Document, Model } from "mongoose";
 
-export interface IPromoCode extends Document {
+interface IPromoCode extends Document {
     userDiscount: number;
     hisCut: number;
     mobileNumber: string;
     promoCode: string;
     upiId: string;
+    email: string;
 }
 
 const schema = new mongoose.Schema<IPromoCode>({
@@ -14,8 +15,9 @@ const schema = new mongoose.Schema<IPromoCode>({
     mobileNumber: { type: String, required: true },
     promoCode: { type: String, required: true },
     upiId: { type: String, required: true },
+    email: { type: String, required: true },
 });
 
-const PromoCode: Model<IPromoCode> = mongoose.models.PromoCode || mongoose.model<IPromoCode>('users', schema);
+const PromoCode =mongoose.models.promoCode|| mongoose.model<IPromoCode>('promocodes', schema);
 
 export default PromoCode;

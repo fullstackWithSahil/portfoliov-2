@@ -30,6 +30,7 @@ export async function POST(request: NextRequest) {
             password: hashedPassword,
             email,
         });
+        
         await newUser.save();
         
         // Return the newly created user
