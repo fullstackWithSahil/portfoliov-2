@@ -1,15 +1,6 @@
-import mongoose, { Document, Model } from "mongoose";
+import mongoose from "mongoose";
 
-interface IPromoCode extends Document {
-    userDiscount: number;
-    hisCut: number;
-    mobileNumber: string;
-    promoCode: string;
-    upiId: string;
-    email: string;
-}
-
-const schema = new mongoose.Schema<IPromoCode>({
+const schema = new mongoose.Schema({
     userDiscount: { type: Number, required: true },
     hisCut: { type: Number, required: true },
     mobileNumber: { type: String, required: true },
@@ -17,7 +8,8 @@ const schema = new mongoose.Schema<IPromoCode>({
     upiId: { type: String, required: true },
     email: { type: String, required: true },
 });
+// monngoose.models.users||monngoose.model('users', Userschema);
 
-const PromoCode =mongoose.models.promoCode|| mongoose.model<IPromoCode>('promocodes', schema);
+const PromoCode = mongoose.models.promocode || mongoose.model('promocode',schema)
 
 export default PromoCode;

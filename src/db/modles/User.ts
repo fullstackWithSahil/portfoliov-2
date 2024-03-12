@@ -12,6 +12,6 @@ const Userschema = new monngoose.Schema({
     verifTokenExpiry:Date,
 })
 
-const User = monngoose.models.users||monngoose.model('users', Userschema);
+let User = monngoose.models.users||monngoose.model('users', Userschema);
 
 export default User;
