@@ -102,6 +102,15 @@ export const websites = [
     desc: "A simple static website for personal use with hosting and deployment",
     cost: 1000,
     image: mongodb,
+    longdesc:"Our simple static website package is perfect for individuals or small businesses looking to establish an online presence and rank well on search engines. For just 1000 rupees, you'll receive a professionally designed website tailored to your needs. This package includes hosting and deployment, ensuring that your website is not only live but also optimized for search engine visibility. With clean and user-friendly design, fast loading times, and basic SEO practices, our static website package offers an affordable and effective solution to boost your online visibility.",
+    list:[
+      "Professionally designed static website",
+      "Tailored to your personal or business needs",
+      "Hosting and deployment included",
+      "Clean and user-friendly design",
+      "Fast loading times for optimal user experience",
+      "Basic SEO practices for improved search engine visibility"
+    ]
   },
   {
     id: 2,
@@ -109,6 +118,15 @@ export const websites = [
     desc: "An ecommerce website with database integration,payment system,hosting and deployment",
     cost: 2000,
     image: mongodb,
+    longdesc:"Take your online business to the next level with our ecommerce website package, designed to maximize your visibility on search engines. For just 2000 rupees, you'll get a fully functional online store equipped with database integration and a secure payment system. Showcase your products, manage inventory, and accept payments seamlessly while leveraging advanced SEO techniques to attract more customers. With our user-friendly ecommerce platform and comprehensive SEO features, you'll be ready to dominate the search engine rankings and grow your business online.",
+    list:[
+      "Fully functional ecommerce website",
+      "Database integration for product management",
+      "Secure payment system for hassle-free transactions",
+      "Hosting and deployment included",
+      "Customizable design to reflect your brand identity",
+      "Advanced SEO techniques for improved search engine visibility",
+    ]
   },
   {
     id: 3,
@@ -116,5 +134,14 @@ export const websites = [
     desc: "A simple static website for personal use with hosting and deployment",
     cost: 2500,
     image: mongodb,
+    longdesc:"Looking for a more advanced static website solution with enhanced SEO capabilities? Our premium package offers all the features of our basic static website package, plus additional customization options to boost your search engine rankings. For just 2500 rupees, you'll receive a tailored website designed to attract more visitors and convert them into customers. With hosting and deployment included, you can launch your new website quickly and start climbing the search engine rankings. Invest in your online presence with our premium static website package and watch your website soar to the top of search engine results.",
+    list:[
+      "All features of our basic static website package",
+      "Additional customization options",
+      "Tailored to your specific requirements",
+      "Hosting and deployment included",
+      "Responsive design for optimal viewing on all devices",
+      "Enhanced SEO capabilities for improved search engine visibility"
+    ]
   },
 ];

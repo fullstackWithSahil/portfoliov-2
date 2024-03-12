@@ -33,9 +33,13 @@ export default function page() {
   return (
     <main>
       <TypewriterEffectSmooth words={words} />
+      <p className="text-white mx-2 text-lg">
+        No matter which package you choose, you can trust that you&apos;re getting a high-quality website optimized for search engines at an unbeatable price. Get started today and take your online presence to new heights with our affordable website solutions.
+      </p>
       <div className="flex flex-wrap w-full justify-around gap-3 mt-4">
         {websites.map((iteam) => (
           <Deliverycard
+            id={iteam.id}
             key={iteam.id}
             title={iteam.title}
             desc={iteam.desc}
