@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { discount } from "@/actions/discount";
+import PaymentButton from "@/components/Paymentbutton";
+
 
 export default function Purchase({id,website}:{id:number,website:any}) {
     const [promoCode,setpromoCode] = useState('');
@@ -42,6 +44,7 @@ export default function Purchase({id,website}:{id:number,website:any}) {
         <br />
         <Button onClick={(e) => handleApply(e)}>Apply</Button>
       </form>
+      <PaymentButton productId={id} promoCode={promoCode}/>
     </>
   );
 }
