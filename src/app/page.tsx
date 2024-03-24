@@ -24,10 +24,11 @@ export default function WavyBackgroundDemo() {
           Awesome animation and great user experience
         </h1>
         <p className="text-center mt-2 text-neutral-300 relative z-20 max-w-[75%]">
-          We garuntee you amazing of great user experience with awsome animation with a secure backend and full database integration
+          We garuntee you amazing of great user experience with awsome animation
+          with a secure backend and full database integration
         </p>
       </div>
-    
+
       <h1 className="text-white font-bold text-3xl text-center capitalize ">
         Technologies i use to create my websites
       </h1>

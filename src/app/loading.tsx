@@ -44,7 +44,7 @@ function Loading({ varient="blue" }: { varient?: "red" | "green" | "blue" }) {
   const styles = "rounded-xl absolute"
   return (
     <div className='flex justify-center items-center absolute inset-0 bg-gray-300 bg-opacity-70'>
-      <div className='relative flex gap-2 w-[50vh] h-[50vh] border-2'>
+      <div className='relative flex gap-2 w-[50vh] h-[50vh]'>
         <Box
           varient={varient}
           delay={50}

@@ -29,8 +29,6 @@ async function sendMail(props: emailType) {
     text: props.text, // plain text body
     html: props.html // html body
   });
-
-  console.log(info);
 }
 
 export default sendMail;

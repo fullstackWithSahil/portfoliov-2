@@ -11,7 +11,7 @@ export default function Navbar() {
     const isActive =(link: string)=>link===router   
   return (
     <header>
-        <nav>
+        <nav id='navbar'>
             <ul className='flex  items-center justify-around border-2 py-1 list-none text-lg text-white'>
                 {
                     navLinks.map((link, index) => {

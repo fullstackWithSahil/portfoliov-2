@@ -12,11 +12,11 @@ export async function POST(req: NextRequest) {
     const otp = num.toString();
     console.log("otp is", otp);
 
-    // await sendMail({
-    //   text: `otp sent successfully ${otp}`,
-    //   to: email,
-    //   subject: "OTP",
-    // });
+    await sendMail({
+      text: `otp sent successfully ${otp}`,
+      to: email,
+      subject: "OTP",
+    });
 
     await kv.set(email, otp);
     return new Response("otp sent successfully");

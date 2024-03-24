@@ -1,3 +1,4 @@
+
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
@@ -18,8 +19,7 @@ export const HoverEffect = ({
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [open, setopen] = useState(false);
   const handleOpen = () => setopen(true);
-  const handleClose = () => setopen(false);
-
+  const handleClose = () => setopen(false)
   return (
     <div
       className={cn(
@@ -67,7 +67,7 @@ export const HoverEffect = ({
   );
 };
 
-export const Card = ({
+const Card = ({
   className,
   children,
   handleClick
@@ -133,7 +133,9 @@ function Model({
   open:boolean;
   handleClose:()=>void
 }){
-
+  if (!open) {
+    return null; // Don't render the modal if open is false
+  }
   return(
     <motion.div
         initial={{ scale: 0, opacity: 0 }}

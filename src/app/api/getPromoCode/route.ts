@@ -84,11 +84,11 @@ export async function POST(request: NextRequest) {
         if you have any queries or problems related to these credecials you can reply to this email or register an enquiry on the website`;
 
     await code.save();
-    // await sendMail({
-    //     to:(tokenData as { email: string }).email,
-    //     subject:"confirmation for your promotion code",
-    //     text
-    // })
+    await sendMail({
+        to:(tokenData as { email: string }).email,
+        subject:"confirmation for your promotion code",
+        text
+    })
     return new NextResponse(
       JSON.stringify({ message: "promo code saved check your mail" })
     );

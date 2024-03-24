@@ -6,6 +6,9 @@ import tailwind from "@/assets/tailwind.png";
 import typescript from "@/assets/typescript.png";
 import express from "@/assets/express.png";
 import node from "@/assets/node.png";
+import LinkedIn from "@/assets/linkedIn.png";
+import Instagram from "@/assets/instagram.jpg";
+import Gmail from "@/assets/gmail.png";
 import Github from "@/assets/github.png";
 
 export const homeNavLinks = [
@@ -35,7 +38,7 @@ export const Technologies = [
     title: "html css javascript",
     img: html,
     description:
-      " These three title form the foundational building blocks of web development. HTML (Hypertext Markup Language) structures content, CSS (Cascading Style Sheets) styles and formats the content, and JavaScript adds interactivity and dynamic behavior to web pages.",
+      "These three title form the foundational building blocks of web development. HTML (Hypertext Markup Language) structures content, CSS (Cascading Style Sheets) styles and formats the content, and JavaScript adds interactivity and dynamic behavior to web pages.",
   },
   {
     id: 2,
@@ -143,5 +146,28 @@ export const websites = [
       "Responsive design for optimal viewing on all devices",
       "Enhanced SEO capabilities for improved search engine visibility"
     ]
+  },
+];
+
+export const FooterLinks = [
+  {
+    name: "instagram",
+    image: Instagram,
+    link: "https://instagram.com/fullstackwithsahil?igshid=YTQwZjQ0NmI0OA==",
+  },
+  {
+    name: "email",
+    image: Gmail,
+    link: "mailto:fullstackwithsahil@gmail.com",
+  },
+  {
+    name: "linkedIn",
+    image: LinkedIn,
+    link: "https://www.linkedin.com/in/sahil-nayak-a0bb80296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  },
+  {
+    name: "github",
+    image: Github,
+    link: "https://github.com/fullstackWithSahil",
   },
 ];
