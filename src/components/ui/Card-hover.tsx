@@ -17,13 +17,10 @@ export const HoverEffect = ({
   className?: string;
 }) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [open, setopen] = useState(false);
-  const handleOpen = () => setopen(true);
-  const handleClose = () => setopen(false)
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
         className
       )}
     >
@@ -51,16 +48,7 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card handleClick={handleOpen}>
-            <Image src={item.img} alt={item.title}/>
-            <CardTitle>{item.title}</CardTitle>
-            <Model 
-              open={open} 
-              handleClose={handleClose} 
-              description={item.description} 
-              title={item.title}
-            />
-          </Card>
+          <Card title={item.title} description={item.description} img={item.img}/>
         </span>
       ))}
     </div>
@@ -69,23 +57,37 @@ export const HoverEffect = ({
 
 const Card = ({
   className,
-  children,
-  handleClick
+  title,
+  description,
+  img
 }: {
   className?: string;
-  children: React.ReactNode;
-  handleClick:()=>void;
+  title:string;
+  description:string;
+  img:any
 }) => {
+  const [open, setopen] = useState(false);
+  const handleOpen = () => setopen(true);
+  const handleClose = () => setopen(false)
   return (
     <div
-      onClick={handleClick}
+      onClick={handleOpen}
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-blue-950 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-blue-950 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative",
         className
       )}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
+      <div className="relative">
+        <div className="p-4">
+          <Image src={img} alt={title}/>
+          <CardTitle>{title}</CardTitle>
+          <Model 
+            open={open} 
+            handleClose={handleClose} 
+            description={description} 
+            title={title}
+          />
+        </div>
       </div>
     </div>
   );
@@ -141,15 +143,15 @@ function Model({
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: open ? 1 : 0 ,opacity:1}}
         transition={{ duration: 0.3 }}
-        className="text-xl fixed top-0 left-0 h-screen w-full bg-[rgba(0,0,0,0.8)] z-10 flex
-         items-center justify-center"
+        className="text-xl fixed top-0 left-0 h-screen w-full bg-[rgba(0,0,0,0.8)]  flex
+         items-center justify-center z-50"
         onClick={e => {
           e.stopPropagation()
           handleClose();
         }}
       >
         <div
-          className="w-full md:w-1/2 h-1/2 bg-blue-400 flex flex-col justify-center items-center px-5
+          className="w-full z-50 md:w-1/2 h-1/2 bg-blue-400 flex flex-col justify-center items-center px-5
             rounded-3xl"
           onClick={e => { e.stopPropagation() }}
         >

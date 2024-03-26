@@ -10,6 +10,8 @@ import LinkedIn from "@/assets/linkedIn.png";
 import Instagram from "@/assets/instagram.jpg";
 import Gmail from "@/assets/gmail.png";
 import Github from "@/assets/github.png";
+import mysql from "@/assets/mysql.png";
+import postgres from "@/assets/postgres.png";
 
 export const homeNavLinks = [
   {
@@ -35,68 +37,84 @@ export const homeNavLinks = [
 export const Technologies = [
   {
     id: 1,
-    title: "html css javascript",
+    title: "HTML, CSS, JavaScript",
     img: html,
     description:
-      "These three title form the foundational building blocks of web development. HTML (Hypertext Markup Language) structures content, CSS (Cascading Style Sheets) styles and formats the content, and JavaScript adds interactivity and dynamic behavior to web pages.",
+      "These are the building blocks of your website. HTML structures the content, CSS styles make it look beautiful, and JavaScript adds interactive features to engage your visitors.",
   },
   {
     id: 2,
-    title: "react",
+    title: "React",
     img: react,
     description:
-      " React is a popular JavaScript library for building user interfaces. It allows for the creation of interactive and dynamic web applications with reusable UI components.",
+      "React is a modern technology that creates user-friendly and interactive experiences on your website. It ensures your site is engaging and easy to navigate.",
   },
   {
     id: 3,
-    title: "typescript",
+    title: "TypeScript",
     img: typescript,
     description:
-      " TypeScript is a superset of JavaScript that adds static typing to the language. It enhances code quality and makes it easier to maintain and scale complex web projects.",
+      "TypeScript ensures a smoother website experience by minimizing errors and enhancing performance. It guarantees a reliable and efficient website for your business.",
   },
   {
     id: 4,
-    title: "tailwind",
+    title: "Tailwind CSS",
     img: tailwind,
     description:
-      " Tailwind CSS is a utility-first CSS framework that helps you build beautiful, accessible, and fast websites with minimal effort.",
+      "Tailwind CSS is a powerful tool that ensures your website is visually appealing and user-friendly. It provides a seamless design experience for your visitors.",
   },
   {
     id: 5,
-    title: "redux",
+    title: "Redux",
     img: redux,
     description:
-      " Redux is an open source JavaScript library that lets you manage state in your application. It lets you manage data, actions, and side effects in your application.",
+      "Redux keeps your website organized and efficient by managing data effectively. It ensures a seamless experience for your visitors, making your website easy to navigate.",
   },
   {
     id: 6,
-    title: "node",
+    title: "Node.js",
     img: node,
     description:
-      " Node.js is an open source, cross-platform, JavaScript runtime environment that makes it easy to build fast, scalable, and reliable applications. It is a JavaScript runtime environment that runs on the V8 JavaScript engine.",
+      "Node.js powers your website with speed and scalability, ensuring a seamless experience for your visitors. It guarantees reliability and performance for your business.",
   },
   {
     id: 7,
-    title: "express",
+    title: "Express.js",
     img: express,
     description:
-      " Express.js is a Node.js web application framework that makes it easy to create web applications that run on the Node.js platform.",
+      "Express.js simplifies website development by providing a robust framework. It ensures quick and efficient delivery of your website, meeting your business needs effectively.",
   },
   {
     id: 8,
-    title: "mongodb",
+    title: "MongoDB",
     img: mongodb,
     description:
-      " MongoDB is an open source, document-oriented database that stores and manages data in JSON format.",
+      "MongoDB offers a reliable and efficient way to manage data for your website. It ensures seamless access to information, enhancing user experience and satisfaction.",
   },
   {
     id: 9,
-    title: "github",
+    title: "GitHub",
     img: Github,
     description:
-      " GitHub is an open source web application for version control and open source contribution",
+      "GitHub streamlines collaboration and version control for your website development. It ensures smooth project management and timely delivery of your website.",
+  },
+  {
+    id: 10,
+    title: "MySQL",
+    img: mysql,
+    description:
+      "MySQL is a popular database system that ensures your website can efficiently store and manage data. It provides a reliable foundation for your website's backend.",
+  },
+  {
+    id: 11,
+    title: "PostgreSQL",
+    img: postgres,
+    description:
+      "PostgreSQL is a powerful database system that ensures your website's data is secure, scalable, and reliable. It offers advanced features for managing complex data structures.",
   },
 ];
+
+
 
 export const websites = [
   {
